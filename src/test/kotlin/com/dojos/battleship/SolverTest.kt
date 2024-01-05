@@ -73,12 +73,12 @@ class SolverTest {
     )
     val game = Game(4, 4, ships)
     val solver = Solver(game)
-    repeat(10) { count ->
-      solver.nextShot()
+    for (i in 1..10) {
+      println(solver.nextShot())
 
       if (game.isOver()) {
-        println("Exiting after ${count + 1} shots")
-        return@repeat
+        println("Exiting after $i shots")
+        break
       }
     }
 
@@ -99,12 +99,12 @@ class SolverTest {
     )
     val game = Game(4, 4, ships)
     val solver = Solver(game)
-    repeat(15) { count ->
+    for (i in 1..12) {
       solver.nextShot()
 
       if (game.isOver()) {
-        println("Exiting after ${count + 1} shots")
-        return@repeat
+        println("Exiting after $i shots")
+        break
       }
     }
 
@@ -134,12 +134,12 @@ class SolverTest {
     )
     val game = Game(10, 10, ships)
     val solver = Solver(game)
-    repeat(1000) { count ->
+    for (i in 1..1000) {
       solver.nextShot()
 
       if (game.isOver()) {
-        println("Exiting after ${count + 1} shots")
-        return@repeat
+        println("Exiting after $i shots")
+        break
       }
     }
 
